@@ -53,7 +53,7 @@ def generate_llama2_response(prompt_input):
             string_dialogue += "Usuario: " + dict_message["content"] + "\n\n"
         else:
             string_dialogue += "Asistente: " + dict_message["content"] + "\n\n"
-    output = replicate.run('majonaga/llama2-refugio-test:414d770b', 
+    output = replicate.run('majonaga/llama2-refugio-test:414d770b4ab4c684b5a179dcc41b536ccc6ecfa78ffaa5161c37f23e13ecff00', 
                            input={"prompt": f"{string_dialogue} {prompt_input} Asistente: ",
                                   "temperature":temperature, "top_p":top_p, "max_length":max_length, "repetition_penalty":1})
     return output
